@@ -26,10 +26,9 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install all necessary packages
-        run: pip install requests beautifulsoup4 pandas
+        run: pip install requests beautifulsoup4 pandas selenium 
     # MAKE SURE YOUR SCRAPER FILENAME MATCHES THE FILENAME HERE
       - name: Run the scraping script
-        # change to scraper.py to match filename 
         run: python NBER-scraper.py
       - name: Commit and push if content changed
         run: |-
