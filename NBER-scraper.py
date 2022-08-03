@@ -71,7 +71,7 @@ df
 # In[12]:
 
 
-df.to_csv("nberresearch.csv",index=False)
+df.to_csv("nberresearch.csv",mode='a',index=False)
 
 
 # In[ ]:
