@@ -1,33 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
-
-
-import requests
-import pandas as pd
-
-
-# In[3]:
-
-
-from bs4 import BeautifulSoup
-
-
-# In[5]:
-
-
-response = requests.get("https://www.nber.org/papers")
-doc = BeautifulSoup(response.text)
-
-
-# In[6]:
-
-
-doc
-
-
-# In[99]:
+# In[1]:
 
 
 import pandas as pd
@@ -43,31 +17,25 @@ from selenium.webdriver.support.ui import Select
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-# In[100]:
+# In[5]:
 
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
 
-# In[101]:
+# In[6]:
 
 
 driver.get("https://www.nber.org/papers")
 
 
-# In[102]:
+# In[7]:
 
 
 titles = driver.find_elements(By.CSS_SELECTOR, ".digest-card__title a")
 
 
-# In[103]:
-
-
-summary = driver.find_elements(By.CSS_SELECTOR, ".digest-card__summary")
-
-
-# In[108]:
+# In[9]:
 
 
 # Create new df
@@ -80,19 +48,19 @@ for title in titles:
     rows.append(row)
 
 
-# In[109]:
+# In[10]:
 
 
 df = pd.DataFrame(rows)
 
 
-# In[110]:
+# In[11]:
 
 
 df
 
 
-# In[82]:
+# In[12]:
 
 
 df.to_csv("nberresearch.csv",index=False)
