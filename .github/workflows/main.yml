@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install all necessary packages
-        run: pip install requests beautifulsoup4 pandas selenium 
+        run: pip install requests beautifulsoup4 pandas selenium webdriver_manager
     # MAKE SURE YOUR SCRAPER FILENAME MATCHES THE FILENAME HERE
       - name: Run the scraping script
         run: python NBER-scraper.py
